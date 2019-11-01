@@ -5,7 +5,7 @@
 Script de comprobación de entrega de práctica
 
 Para ejecutarlo, desde la shell:
- $ python3 check-p5.py login_github
+ $ python3 check-p5.py login_gitlab
 
 """
 
@@ -19,14 +19,14 @@ files = ['README.md',
          'p5.txt',
          'sip.libpcap.gz',
          'p5.pcapng',
-	 'check-p5.py',
+	     'check-p5.py',
          '.git']
 
 
 if len(sys.argv) != 2:
-    sys.exit("Usage : $ python3 check-p5.py login_github")
+    sys.exit("Usage : $ python3 check-p5.py login_gitlab")
 
-repo_git = "http://github.com/" + sys.argv[1] + "/ptavi-p5"
+repo_git = "http://gitlab.etsit.urjc.es/" + sys.argv[1] + "/ptavi-p5"
 
 aleatorio = str(int(random.random() * 1000000))
 
