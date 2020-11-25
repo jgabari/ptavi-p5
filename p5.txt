@@ -92,10 +92,9 @@ Se ha capturado una sesión SIP con Ekiga (archivo sip.cap.gz), que se puede abr
 
 ***** Captura de una sesión SIP
 
-  * Dirígete a la web de IPTel (https://serweb.iptel.org/user/reg/index.php) con el navegador y créate una cuenta SIP.  Recibirás un correo electrónico de confirmación en la dirección que has indicado al registrarte.
-
-  * Lanza Ekiga, y configúralo con los datos de la cuenta que te acabas de crear. Para ello, puedes ir al menú ``Editar'' y seleccionar ``Cuentas''. Tendrás que rellenar los campos de manera similar a lo que se puede ver en la imagen a continuación (recuerda poner tu nombre de usuario en lugar de ``grex''). Comprueba que estás conectado (En la barra al final de la ventana podrás ver ``Registrado''). Al terminar, cierra completamente Ekiga.
-(en el guión en PDF en este punto podrás ver una gráfica)
+  * Dirígete a la web de Linphone (https://www.linphone.org/freesip/home) con el navegador y créate una cuenta SIP.  Recibirás un correo electrónico de confirmación en la dirección que has indicado al registrarte (mira en tu carpeta de spam si no es así).
+  
+  * Lanza linphone, y configúralo con los datos de la cuenta que te acabas de crear. Para ello, puedes ir al menú ``Ayuda'' y seleccionar ``Asistente de Configuración de Cuenta''. Al terminar, cierra completamente linphone.
 
   * Captura una sesión SIP de una conversación con el número SIP sip:music@sip.iptel.org. Recuerda que has de comenzar a capturar tramas antes de arrancar Ekiga para ver todo el proceso.
 
@@ -115,3 +114,5 @@ Se ha capturado una sesión SIP con Ekiga (archivo sip.cap.gz), que se puede abr
   * Filtra por los paquetes SIP de la captura y guarda *únicamente* los paquetes SIP como p5.pcapng. Abre el fichero guardado para cerciorarte de que lo has hecho bien. Deberás añadirlo al repositorio.
 
 [Al terminar la práctica, realiza un push para sincronizar tu repositorio GitLab]
+
+IMPORTANTE: No olvides rellenar el test de la práctica 5 en el Aula Virtual de la asignatura.
