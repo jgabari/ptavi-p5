@@ -26,24 +26,37 @@ Se ha capturado una sesión SIP con Ekiga (archivo sip.cap.gz), que se puede abr
 
   * Analiza las dos primeras tramas de la captura.
     * ¿Qué servicio es el utilizado en estas tramas?
+    Se utiliza DNS, se busca la dirección ip de Ekiga.
     * ¿Cuál es la dirección IP del servidor de nombres del ordenador que ha lanzado Ekiga?
+    Es 80.58.61.250.
     * ¿Qué dirección IP (de ekiga.net) devuelve el servicio de nombres?
+    Devuelve la dirección 86.64.162.35.
 
   * A continuación, hay más de una docena de tramas TCP/HTTP.
     * ¿Podrías decir la URL que se está pidiendo?
+    Se está pidiendo la URL "http://ekiga.net/ip/".
     * ¿Qué user agent (UA) la está pidiendo?
+    Ekiga.
     * ¿Qué devuelve el servidor?
+    Devuelve en un HTTP 200 OK texto: "83.36.48.212"
     * Si lanzamos el navegador web, por ejemplo, Mozilla Firefox, y vamos a la misma URL, ¿qué recibimos? ¿Qué es, entonces, lo que está respondiendo el servidor?
+    Lo que recibimos es nuestra dirección IP pública.
 
   * Hasta la trama 45 se puede observar una secuencia de tramas del protocolo STUN.
     * ¿Por qué se hace uso de este protocolo?
+    Para establecer una comunicación UDP entre dos hosts que se encuentren tras enrutadores NAT.
     * ¿Podrías decir si estamos tras un NAT o no?
+    Sí porque en caso contrario no se habría necesitado usar STUN. Ya se podía intuir por tener la dirección privada.
 
   * La trama 46 es la primera trama SIP. En un entorno como el de Internet, lo habitual es desconocer la dirección IP de la otra parte al realizar una llamada. Por eso, todo usuario registra su localización en un servidor Registrar. El Registrar guarda información sobre los usuarios en un servidor de localización que puede ser utilizado para localizar usuarios.
     * ¿Qué dirección IP tiene el servidor Registrar?
+    86.64.162.35
     * ¿A qué puerto (del servidor Registrar) se envían los paquetes SIP?
+    5060
     * ¿Qué método SIP utiliza el UA para registrarse?
+    El método REGISTER.
     * Además de REGISTER, ¿podrías decir qué instrucciones SIP entiende el UA?
+    INVITE,ACK,OPTIONS,BYE,CANCEL,NOTIFY,REFER,MESSAGE
 
   [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
