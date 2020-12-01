@@ -62,22 +62,35 @@ Se ha capturado una sesión SIP con Ekiga (archivo sip.cap.gz), que se puede abr
 
   * Fijémonos en las tramas siguientes a la número 46:
     * ¿Se registra con éxito en el primer intento?
+    No, consigue registrarse con éxito al segundo intento.
     * ¿Cómo sabemos si el registro se ha realizado correctamente o no?
+    Se puede saber mirando lo que responde el servidor, en este caso en el primer intento devuelve un "401 Unauthorized" y en el segundo un "200 OK".
     * ¿Podrías identificar las diferencias entre el primer intento y el segundo de registro? (fíjate en el tamaño de los paquetes y mira a qué se debe el cambio)
+    El primero no incluía el campo Authorization con la información de autenticación. Esta información se la ha dado el servidor en el mensaje de denegación de registro.
     * ¿Cuánto es el valor del tiempo de expiración de la sesión? Indica las unidades.
+    3600 segundos.
 
   * Una vez registrados, podemos efectuar una llamada. Vamos a probar con el servicio de eco de Ekiga que nos permite comprobar si nos hemos conectado correctamente. El servicio de eco tiene la dirección sip:500@ekiga.net. Veamos el INVITE de cerca.
     * ¿Puede verse el nombre del que efectúa la llamada, así como su dirección SIP?
+    Sí, en el campo From.
     * ¿Qué es lo que contiene el cuerpo de la trama? ¿En qué formato/protocolo está?
+    Contiene la información de la sesión, usando SDP.
     * ¿Tiene éxito el primer intento? ¿Cómo lo sabes?
+    No porque se le responde con un mensaje 407 Proxy Authentication Required.
     * ¿En qué se diferencia el segundo INVITE más abajo del primero? ¿A qué crees que se debe esto?
+    En que esta vez sí incluye la información del Proxy. Esta información se le facilita el servidor en el mensaje de error 407.
 
   * Una vez conectado, estudia el intercambio de tramas.
     * ¿Qué protocolo(s) se utiliza(n)? ¿Para qué sirven estos protocolos?
+    Se utilizan RTP, H.261, RTCP y ARP. RTP sirve para transmisión de información en tiempo real, como en este caso una llamada, H.261 para comprimir audio y video, RTCP envía mensajes de control durante las sesiones de RTP y ARP para encontrar la deirección ethernet que corresponde a una dirección IP mandando "preguntas" a broadcast.
     * ¿Cuál es el tamaño de paquete de los mismos?
+    Los paquetes de RTP son de 214 bytes, H.261 son variables, RTCP 102 bytes y ARP 42 la pregunta y 60 la respuesta.
     * ¿Se utilizan bits de padding?
+    No, en el campo Padding pone False.
     * ¿Cuál es la periodicidad de los paquetes (en origen; nota que la captura es en destino)?
+    Unos 20 ms.
     * ¿Cuántos bits/segundo se envían?
+    64 Kbits/s
 
   [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
