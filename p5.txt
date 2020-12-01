@@ -150,14 +150,21 @@ Se ha capturado una sesión SIP con Ekiga (archivo sip.cap.gz), que se puede abr
 
   * Observa las diferencias en el inicio de la conversación entre el entorno del laboratorio y el del ejercicio anterior:
     * ¿Se utilizan DNS y STUN? ¿Por qué?
+    DNS se utiliza para saber el nombre de la máquina. Hay dos paquetes que son preguntas de STUN pero sin respuestas.
     * ¿Son diferentes el registro y la descripción de la sesión?
+    Cambia el nombre sip.
 
   * Identifica las diferencias existentes entre esta conversación y la conversación anterior:
     * ¿Cuántos flujos tenemos?
+    Hay 2 flujos.
     * ¿Cuál es su periodicidad?
+    20 ms también.
     * ¿Cuánto es el valor máximo del delta y los valores medios y máximo del jitter?
+    Los delta máximos son 26.424 y 39.995 respectivamente. Los jitter medios son 0.319 y 5.336 y los máximos 1.185 y 8.039.
     * ¿Podrías reproducir la conversación desde Wireshark? ¿Cómo? Comprueba que poniendo un valor demasiado pequeño para el buffer de jitter, la conversación puede no tener la calidad necesaria.
+    No se puede, al darle a Play Streams, aparece vacía la gráfica y no se reproduce nada.
     * ¿Sabrías decir qué tipo de servicio ofrece sip:music@iptel.org?
+    Se reproduce música.
 
   [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
